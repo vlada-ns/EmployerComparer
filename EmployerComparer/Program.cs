@@ -26,6 +26,7 @@ namespace EmployerComparer
                 BankInfoId = 91,
                 ProbationPeriodInMonths = 6
             };
+
             Company company2 = new Company()
             {
                 CompanyId = 2,
@@ -63,6 +64,7 @@ namespace EmployerComparer
                 ModifiedBy = null,
                 PersonStatusChangeId = null
             };
+
             Person person2 = new Person()
             {
                 PersonId = 2,
@@ -98,9 +100,6 @@ namespace EmployerComparer
                 IsInBlackOut = false,
                 EnrollmentDate = DateTime.Now,
             };
-            employer1.Company = company1;
-            employer1.ContactPerson = person1;
-            employer1.Person.Add(person1);
 
             Employer employer2 = new Employer()
             {
@@ -116,13 +115,18 @@ namespace EmployerComparer
                 IsInBlackOut = false,
                 EnrollmentDate = DateTime.Now,
             };
+
+            employer1.Company = company1;
+            employer1.ContactPerson = person1;
+            employer1.Person.Add(person1);
+
             employer2.Company = company2;
             employer2.ContactPerson = person2;
             employer2.Person.Add(person2);
 
             //This is the comparison class
             CompareLogic compareLogic = new CompareLogic();
-            compareLogic.Config.MaxDifferences = 999;
+            compareLogic.Config.MaxDifferences = 999;       // explanation --> https://github.com/GregFinzer/Compare-Net-Objects/wiki/Getting-Started#important
 
             ComparisonResult result = compareLogic.Compare(employer1, employer2);
 
