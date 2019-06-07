@@ -1,0 +1,3 @@
+﻿
+
+	IComparer neka implementira nad tim objektima
