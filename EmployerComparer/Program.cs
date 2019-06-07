@@ -126,7 +126,9 @@ namespace EmployerComparer
 
             //This is the comparison class
             CompareLogic compareLogic = new CompareLogic();
-            compareLogic.Config.MaxDifferences = 999;       // explanation --> https://github.com/GregFinzer/Compare-Net-Objects/wiki/Getting-Started#important
+
+            // explanation --> https://github.com/GregFinzer/Compare-Net-Objects/wiki/Getting-Started#important
+            compareLogic.Config.MaxDifferences = 999;
 
             ComparisonResult result = compareLogic.Compare(employer1, employer2);
 
